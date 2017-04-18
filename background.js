@@ -2,10 +2,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	getCurrentTabUrl(function(url) {
 		var newURL = getAndIncrementLastNumber(url);
 		if(url.toLowerCase() === newURL.toLowerCase()) {
-			chrome.tabs.update(tab.id, {url: newURL});
+			alert("This URL doesn't have sequence/number at the end");
 		}
 		else {
-			alert("This URL doesn't have sequence/number at the end");
+			chrome.tabs.update(tab.id, {url: newURL});
 		}
 	});    
 });
