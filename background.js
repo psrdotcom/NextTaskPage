@@ -2,7 +2,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	getCurrentTabUrl(function(url) {
 		var newURL = getAndIncrementLastNumber(url);
 		if(url.toLowerCase() === newURL.toLowerCase()) {
-			alert("This URL doesn't have sequence/number at the end");
+			alert("This URL doesn't have sequence/number at the end. \nPlease try this extension on valid URL ending with number.");
 		}
 		else {
 			chrome.tabs.update(tab.id, {url: newURL});
