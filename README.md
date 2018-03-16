@@ -2,6 +2,8 @@
 
 Project Webpage: https://psrdotcom.github.io/NextTaskPage/
 
+Try it out in jsfiddle : https://jsfiddle.net/venkysiram/soru83cs/
+
 This extension displays the next task or the page by incrementing the number in URL.  
 
 Example 1:  www.psrdotcom.blogspot.com\page\1
