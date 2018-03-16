@@ -1,9 +1,9 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Next Task/Page",
   "description": "This extension displays the next task or the page by incrementing the number in URL",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "browser_action": {
     "default_icon": "icon.png"
@@ -11,8 +11,8 @@
   "icons": { 
 	"16": "icon16.png",
 	"32": "icon32.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    	"48": "icon48.png",
+    	"128": "icon128.png"
 		  },
   "background": {
 	"scripts": ["background.js"]
