@@ -15,10 +15,16 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 * @param {function(string)} str - URL String encoded
 */
 function getAndIncrementLastNumber(str) {
-	//(/\d+)(?!.*/\d)
-	// /\d+$/
-    return str.replace(/\d+$/, function(s) {
-        return +s+1;
+    return str.replace(/(\d+)(?!.*\d)/, function(s) {
+        var beforeAddlen = s.length;
+        s = parseInt(s) + 1;
+        var afterAddLen = s.toString().length;
+        if (afterAddLen < beforeAddlen) {
+           for (var i = 0; i < beforeAddlen - afterAddLen; i++ ) {
+             s = '0' + s;
+           }
+        }
+        return s;
     });
 }
 
