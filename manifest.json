@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
 
   "name": "Next Task/Page",
   "description": "This extension displays the next task or the page by incrementing the number in URL",
