@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .container {
+      width: 90px;
+    }
+
+    .previous {
+      float: left;
+      cursor: pointer;
+      background: url('images/next.png') no-repeat;
+      width: 32px;
+      height: 32px;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+      margin-top: -5px;
+    }
+
+    .next {
+      float: right;
+      cursor: pointer;
+      background: url('images/next.png') no-repeat;
+      width: 32px;
+      height: 32px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <span id="previous" class="previous" title="Previous task/page"></span>
+    <span id="next" class="next" title="Next task/page"></span>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

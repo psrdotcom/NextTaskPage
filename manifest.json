@@ -1,24 +1,48 @@
 {
   "manifest_version": 2,
-
-  "name": "Next Task/Page",
-  "description": "This extension displays the next task or the page by incrementing the number in URL",
-  "version": "1.0.3",
-
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
-  "icons": { 
-	"16": "icon16.png",
-	"32": "icon32.png",
-    	"48": "icon48.png",
-    	"128": "icon128.png"
-		  },
+  "name": "Previous / Next Task or Page",
+  "description": "This extension displays the previous or next task of the page by decrementing or incrementing the last number in URL",
+  "version": "1.0.4",
   "background": {
-	"scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icon_16.png",
+      "32": "images/icon_32.png",
+      "48": "images/icon_48.png",
+      "128": "images/icon_128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Previous / Next page"
+  },
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
   },
   "permissions": [
-	"activeTab",
-	"tabs"
-  ]
+    "activeTab",
+    "tabs"
+  ],
+  "commands": {
+    "previous-page": {
+      "suggested_key": {
+        "default": "Alt+P",
+        "mac": "Alt+P"
+      },
+      "description": "Navigates to previous task / page"
+    },
+    "next-page": {
+      "suggested_key": {
+        "default": "Alt+N",
+        "mac": "Alt+N"
+      },
+      "description": "Navigates to next task / page"
+    }
+  }
 }

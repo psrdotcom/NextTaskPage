@@ -1,24 +1,31 @@
 'use strict';
 
-/**
- * Register a callback function with the commands api, which will be called when
- * one of our registered commands is detected.
- */
-chrome.commands.onCommand.addListener(function (command) {
+let previous = document.getElementById('previous');
+let next = document.getElementById('next');
+
+previous.onclick = function () {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    var url = tabs[0].url, newURL;
-    if (command === 'previous-page') {
-      newURL = getAndDecreseLastNumber(url);
-    } else if (command === 'next-page') {
-      newURL = getAndIncreaseLastNumber(url);
-    }
+    var url = tabs[0].url;
+    var newURL = getAndDecreseLastNumber(url);
     if (url.toLowerCase() === newURL.toLowerCase()) {
-      alert("This URL doesn't have sequence/number at the end. \nPlease try this extension on valid URL ending with number.");
+      console.info("This URL doesn't have sequence/number at the end. \nPlease try this extension   on valid URL ending with number.");
     } else {
       chrome.tabs.update(tabs[0].id, { url: newURL });
     }
   });
-});
+};
+
+next.onclick = function () {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var url = tabs[0].url;
+    var newURL = getAndIncreaseLastNumber(url);
+    if (url.toLowerCase() === newURL.toLowerCase()) {
+      console.info("This URL doesn't have sequence/number at the end. \nPlease try this extension on valid URL ending with number.");
+    } else {
+      chrome.tabs.update(tabs[0].id, { url: newURL });
+    }
+  });
+};
 
 /**
 * Get and decrease the last number of the url string
