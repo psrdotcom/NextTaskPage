@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Previous / Next Task or Page",
-  "description": "This extension displays the previous or next task of the page by decrementing or incrementing the last number in URL",
+  "name": "Previous / Next Page",
+  "description": "This extension displays the previous or next page by decrementing or incrementing the last number in URL",
   "version": "1.0.4",
   "background": {
     "scripts": [
@@ -35,14 +35,14 @@
         "default": "Alt+P",
         "mac": "Alt+P"
       },
-      "description": "Navigates to previous task / page"
+      "description": "Navigates to previous page"
     },
     "next-page": {
       "suggested_key": {
         "default": "Alt+N",
         "mac": "Alt+N"
       },
-      "description": "Navigates to next task / page"
+      "description": "Navigates to next page"
     }
   }
 }
