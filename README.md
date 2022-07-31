@@ -26,11 +26,11 @@ Example 3:
 
 http://www.siram.com/test0002.jsp/ will return http://www.siram.com/test0001.jsp/
 
-Exmaple 4:
+Example 4:
 
 http://www.siram.com/test0100.jsp/ will return http://www.siram.com/test0099.jsp/
 
-Exmaple 5:
+Example 5:
 
 http://www.siram.com/test0001.jsp/ will return http://www.siram.com/test0001.jsp/
 
@@ -48,6 +48,6 @@ Example 3:
 
 http://www.siram.com/test0001.jsp/ will now return http://www.siram.com/test0002.jsp/
 
-Exmaple 4:
+Example 4:
 
 http://www.siram.com/test0099.jsp/ will now return http://www.siram.com/test0100.jsp/
