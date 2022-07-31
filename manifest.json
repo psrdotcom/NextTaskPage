@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Previous / Next Page",
   "description": "This extension displays the previous or next page by decrementing or incrementing the last number in URL",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "background": {
     "scripts": [
       "background.js"

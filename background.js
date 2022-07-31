@@ -1,3 +1,27 @@
+/*
+* MIT License
+* 
+* Copyright (c) 2022 Suresh Raju Pilli
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
+
 'use strict';
 
 /**
@@ -6,9 +30,9 @@
  */
 chrome.commands.onCommand.addListener(function (command) {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    var url = tabs[0].url, newURL;
+    let url = tabs[0].url, newURL;
     if (command === 'previous-page') {
-      newURL = getAndDecreseLastNumber(url);
+      newURL = getAndDecreaseLastNumber(url);
     } else if (command === 'next-page') {
       newURL = getAndIncreaseLastNumber(url);
     }
@@ -24,14 +48,14 @@ chrome.commands.onCommand.addListener(function (command) {
 * Get and decrease the last number of the url string
 * @param {function(string)} str - URL String encoded
 */
-function getAndDecreseLastNumber(str) {
+function getAndDecreaseLastNumber(str) {
   return str.replace(/(\d+)(?!.*\d)/, function (s) {
-    var beforeLength = s.length;
-    var updatedVal = parseInt(s) - 1;
+    let beforeLength = s.length;
+    let updatedVal = parseInt(s) - 1;
     if (updatedVal > 0) {
-      var afterLength = updatedVal.toString().length;
+      let afterLength = updatedVal.toString().length;
       if (afterLength < beforeLength) {
-        for (var i = 0; i < beforeLength - afterLength; i++) {
+        for (let i = 0; i < beforeLength - afterLength; i++) {
           updatedVal = '0' + updatedVal;
         }
       }
@@ -47,11 +71,11 @@ function getAndDecreseLastNumber(str) {
 */
 function getAndIncreaseLastNumber(str) {
   return str.replace(/(\d+)(?!.*\d)/, function (s) {
-    var beforeAddlen = s.length;
+    let beforeAddlen = s.length;
     s = parseInt(s) + 1;
-    var afterAddLen = s.toString().length;
+    let afterAddLen = s.toString().length;
     if (afterAddLen < beforeAddlen) {
-      for (var i = 0; i < beforeAddlen - afterAddLen; i++) {
+      for (let i = 0; i < beforeAddlen - afterAddLen; i++) {
         s = '0' + s;
       }
     }
